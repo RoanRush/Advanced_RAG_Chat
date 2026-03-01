@@ -1,5 +1,6 @@
 import time
 import uuid
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
@@ -7,7 +8,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from rag.pipeline import AdvancedRAGPipeline
+from dotenv import load_dotenv
 
+load_dotenv()
 
 pipeline = AdvancedRAGPipeline()
 
